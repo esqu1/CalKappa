@@ -7,3 +7,6 @@ all: $(OBJECTS)
 
 vector.o: vector.cpp head.h
 	$(CC) $(CFLAGS) -c vector.cpp -o vector.o
+
+clean:
+	rm *~ *.o
