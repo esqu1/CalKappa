@@ -1,0 +1,3 @@
+OBJECTS=bin/canvas.o bin/transformation.o bin/curves.o bin/parser.o bin/util.o bin/3d.o
+CFLAGS= -std=c++11 -O2
+CC=g++
