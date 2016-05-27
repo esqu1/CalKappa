@@ -20,9 +20,9 @@ class Vector{
   void set_Y(double a);
   void set_Z(double a);
   string to_string() const;
-  Vector operator+(const Vector& v);
-  Vector operator-();
-  //Vector operator-(const Vector& v);
+  Vector operator+(const Vector& v) const;
+  Vector operator-() const;
+  Vector operator-(const Vector& v) const;
   double dot(const Vector& v);
   Vector cross(const Vector& v);
  private:

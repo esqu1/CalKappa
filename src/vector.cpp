@@ -67,7 +67,7 @@ double Vector::norm(){
   return pow(pow(x,2) + pow(y,2) + pow(z,2),0.5);
 }
 
-Vector Vector::operator+(const Vector& v){
+Vector Vector::operator+(const Vector& v) const{
   Vector n (v);
   if(this->size == v.size){
     n.set_X(n.x + this->x);
@@ -80,13 +80,13 @@ Vector Vector::operator+(const Vector& v){
   }
 }
 
-Vector Vector::operator-(){
+Vector Vector::operator-() const{
   return Vector(-x,-y,-z);
 }
 
-//Vector Vector::operator-(const Vector& v){
-//  return this* + (-v);
-//}
+Vector Vector::operator-(const Vector& v) const{
+  return *this + (-v);
+}
 
 double Vector::dot(const Vector& v){
   if(v.size != size){
@@ -101,6 +101,5 @@ Vector Vector::cross(const Vector& v){
     cout << "Error: Operation not permitted for cross.\n";
     throw 0;
   }
-  Vector w (y*v.z - z*v.y, z*v.x - x*v.z, x*v.y - y*v.x);
-  return w;
+  return Vector (y*v.z - z*v.y, z*v.x - x*v.z, x*v.y - y*v.x);
 }
