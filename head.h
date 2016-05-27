@@ -21,6 +21,8 @@ class Vector{
   void set_Z(double a);
   string to_string() const;
   Vector operator+(const Vector& v);
+  Vector operator-();
+  //Vector operator-(const Vector& v);
   double dot(const Vector& v);
   Vector cross(const Vector& v);
  private:

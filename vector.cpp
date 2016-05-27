@@ -80,6 +80,14 @@ Vector Vector::operator+(const Vector& v){
   }
 }
 
+Vector Vector::operator-(){
+  return Vector(-x,-y,-z);
+}
+
+//Vector Vector::operator-(const Vector& v){
+//  return this* + (-v);
+//}
+
 double Vector::dot(const Vector& v){
   if(v.size != size){
     cout << "Error: Operation not permitted for Vectors of different sizes.\n";
