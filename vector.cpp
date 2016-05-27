@@ -79,3 +79,20 @@ Vector Vector::operator+(const Vector& v){
     throw 0;
   }
 }
+
+double Vector::dot(const Vector& v){
+  if(v.size != size){
+    cout << "Error: Operation not permitted for Vectors of different sizes.\n";
+    throw 0;
+  }
+  return x*v.x + y*v.y + z*v.z;
+}
+
+Vector Vector::cross(const Vector& v){
+  if(v.size != size || size != 3){
+    cout << "Error: Operation not permitted for cross.\n";
+    throw 0;
+  }
+  Vector w (y*v.z - z*v.y, z*v.x - x*v.z, x*v.y - y*v.x);
+  return w;
+}
