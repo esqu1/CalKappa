@@ -1,8 +1,8 @@
 #include<iostream>
+#include<string>
 #include<math.h>
 
 using namespace std;
-
 
 class Vector{
   double x,y,z;
@@ -19,7 +19,12 @@ class Vector{
   void set_X(double a);
   void set_Y(double a);
   void set_Z(double a);
+  string to_string() const;
   Vector operator+(const Vector& v);
  private:
   void set_size(int n);
 };
+
+inline ostream& operator<<(ostream& stream, const Vector& v){
+  return stream << v.to_string();
+}

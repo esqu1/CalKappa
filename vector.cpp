@@ -59,6 +59,10 @@ void Vector::set_Z(double a){
   }
 }
 
+string Vector::to_string() const{
+  return (size == 2) ? "< " + std::to_string(x) + "," + std::to_string(y) + " >" : "< " + std::to_string(x) + "," + std::to_string(y) + "," + std::to_string(z) + " >";
+}
+
 double Vector::norm(){
   return pow(pow(x,2) + pow(y,2) + pow(z,2),0.5);
 }
@@ -68,7 +72,8 @@ Vector Vector::operator+(const Vector& v){
   if(this->size == v.size){
     n.set_X(n.x + this->x);
     n.set_Y(n.y + this->y);
-    n.set_Z(n.z + this->z);
+    if(v.size == 3) n.set_Z(n.z + this->z);
+    return n;
   }else{
     cout << "Error: Operation not permitted for Vectors of different sizes.\n";
     throw 0;
